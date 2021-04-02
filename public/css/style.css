@@ -1,0 +1,78 @@
+/* Global */
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+a {
+    color:inherit;
+    text-decoration: inherit;
+}
+body {
+    min-height:100vh;
+    background-color: #ffffff;
+    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header */
+header {
+    padding:24px;
+    text-align:center;
+}
+header img {
+    height:100px;
+}
+
+/* Main */
+main {
+    display:flex;
+    padding:24px 0;
+}
+    /*Aside*/
+    aside {
+        min-height: 100vh;
+        background-color:rgba(0, 0, 0, 0.164);
+        padding-top:20px;
+    }
+    nav {
+        display:flex;
+        flex-direction: column;
+        position:sticky;
+        top:0;
+        font-size:1.3rem;
+    }
+    nav a {
+        margin:20px;
+    }
+
+    .hero {
+        padding:0 40px;
+        margin:0 auto;
+        max-width:1200px;
+    }
+
+    .hero article {
+        margin-bottom:48px;
+        padding:24px;
+        background:rgba(0, 0, 0, 0.116);
+    }
+    .hero img {
+        width:100%;
+        padding:24px;
+    }
+
+    /* All articles */
+    .hero__allArticles {
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: space-around;
+    }
+    .allArticles__article {
+        text-align: center;
+        width:300px;
+        padding:12px;
+        background:rgba(0, 0, 0, 0.116);
+        margin:12px;
+    }
