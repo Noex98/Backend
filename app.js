@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const routes = require('./routes/priRoutes');
 
 const app = express();
-const PORT = 80;
+const PORT = process.env.PORT || 3000;
 
 // Set view engine
 app.set('view engine', 'ejs');
