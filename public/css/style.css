@@ -51,10 +51,16 @@ a {
 
 aside {
   border-right: 1px solid black;
-  padding: 24px;
 }
 
-aside li {
+aside nav {
+  padding: 24px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+aside nav li {
   list-style: none;
   margin-bottom: 6px;
 }
@@ -133,6 +139,8 @@ main {
   background: #e0e0e0;
   padding: 32px;
   margin: 16px 0;
+  width: 100%;
+  overflow-wrap: break-word;
 }
 
 header {

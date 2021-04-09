@@ -26,11 +26,16 @@
 
 aside {
     border-right: 1px solid black;
-    padding:24px;
-    li {
-        list-style: none;
-        margin-bottom: 6px;
+    nav {
+        padding:24px;
+        position:sticky;
+        top:0;
+        li {
+            list-style: none;
+            margin-bottom: 6px;
+        }
     }
+    
 }
 
 main {
@@ -86,6 +91,8 @@ main {
         background: rgb(224, 224, 224);
         padding:32px;
         margin:16px 0;
+        width:100%;
+        overflow-wrap: break-word;
     }
 }
 
