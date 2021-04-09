@@ -1,29 +1,33 @@
+// Primary routes
+const { request } = require('express');
 const express = require('express')
-const router = express.Router();
+const priRoutes = express.Router();
+const Blog = require('../models/blog');
 
 //Index
-router.get('/', (req, res) => {
-    res.render('index', {  title: 'Home' });
+priRoutes.get('/', (req, res) => {
+    Blog.find().sort({ createdAt: -1 })
+        .then((result) => {
+            res.render('index', { title: 'All blogs', blogs: result })
+        })
+        .catch((err) => {
+            console.log(err);
+        })
 })
 
-//About
-router.get('/about', (req, res) => {
-    res.render('about', {  title: 'Om os' });
+// Blog post
+priRoutes.post('/', (req, res) => {
+    const blog = new Blog(req.body);
+    
+    blog.save()
+        .then((result) => {
+            res.redirect('/')
+        })
+        .catch((err) => {
+            console.log(err);
+        });
 })
 
-//All articles
-router.get('/All', (req, res) => {
-    res.render('all', {  title: 'Alle artikler' });
-})
 
-//An article
-router.get('/article1', (req, res) => {
-    res.render('article1', {  title: 'Om os' });
-})
 
-//404
-router.use((req, res) => {
-    res.render('404'), { title: '404'};
-})
-
-module.exports = router;
+module.exports = priRoutes;

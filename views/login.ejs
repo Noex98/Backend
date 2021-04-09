@@ -1,0 +1,23 @@
+<%- include('./partials/head.ejs')%>
+
+<div class="loginWrap">
+    <div class="loginCont">
+        <form method="post">
+            <div>
+                <label for="username">Brugernavn:</label><br>
+                <input type="text" name="username" id="username">
+            </div><br>
+            <div>
+                <label for="password">Kodeord:</label><br>
+                <input type="password" name="password" id="password">
+            </div><br>
+            <div>
+                <button class="loginBtn" type="submit">Log ind</button>
+            </div>
+        </form>
+        <br>
+        <a href="create-user">
+            <small>Opret bruger</small>
+        </a>
+    </div>
+</div>

@@ -1,59 +1,36 @@
 <%- include('./partials/head.ejs')%>
-<%- include('./partials/header.ejs') %>
-<main>
-    <%- include('./partials/aside.ejs') %>
-    <section class="hero">
 
-        <a href="Article1">
-            <article>
-                <h3>Article 1</h3>
-                <img src="./media/images/photo.jpg" alt="billede">
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui, eveniet! Quod aliquid 
-                    praesentium cumque autem incidunt ea suscipit accusantium. Temporibus minus dolore 
-                    aspernatur aperiam provident, corrupti consectetur nesciunt dolores qui?
-                </p>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui, eveniet! Quod aliquid 
-                    praesentium cumque autem incidunt ea suscipit accusantium. Temporibus minus dolore 
-                    aspernatur aperiam provident, corrupti consectetur nesciunt dolores qui?
-                </p>
-            </article>
-        </a>
+<%- include('./partials/header.ejs')%>
+    <div class="flexCont">
+    <%- include('./partials/aside.ejs')%>
+    <main>
+        <div class="wall">
+            <h2 id="newPostBtn">Skriv nyt oplæg</h2>
 
-        <a href="Article1">
-            <article>
-                <h3>Article 2</h3>
-                <img src="./media/images/photo.jpg" alt="billede">
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui, eveniet! Quod aliquid 
-                    praesentium cumque autem incidunt ea suscipit accusantium. Temporibus minus dolore 
-                    aspernatur aperiam provident, corrupti consectetur nesciunt dolores qui?
-                </p>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui, eveniet! Quod aliquid 
-                    praesentium cumque autem incidunt ea suscipit accusantium. Temporibus minus dolore 
-                    aspernatur aperiam provident, corrupti consectetur nesciunt dolores qui?
-                </p>
-            </article>
-        </a>
-        
-        <a href="Article1">
-            <article>
-                <h3>Article 3</h3>
-                <img src="./media/images/photo.jpg" alt="billede">
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui, eveniet! Quod aliquid 
-                    praesentium cumque autem incidunt ea suscipit accusantium. Temporibus minus dolore 
-                    aspernatur aperiam provident, corrupti consectetur nesciunt dolores qui?
-                </p>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui, eveniet! Quod aliquid 
-                    praesentium cumque autem incidunt ea suscipit accusantium. Temporibus minus dolore 
-                    aspernatur aperiam provident, corrupti consectetur nesciunt dolores qui?
-                </p>
-            </article>
-        </a>
-        
-    </section>
-</main>
+            <div id="postForm" style="display:none" class="wall__createCont">
+                <form class="createCont__form" method="POST">
+                    <div class="form__inputCont">
+                        <input autocomplete="off" placeholder="Titel *" type="text" id="title" name="title" required>
+
+                        <textarea autocomplete="off" placeholder="Hej venner, *" id="form__body" name="body" required></textarea>
+                    </div>
+                    <button>Submit</button>
+                </form>
+            </div>
+
+            <% if (blogs.length > 0) { %>
+                <% blogs.forEach(blog => { %>
+                    <div class="wall__post">
+                        <h2 class="post__title"><%= blog.title %></h3>
+                        <br>
+                        <p class="post__snippet"><%= blog.body %></p>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <p>There are no blogs to display...</p>
+            <% } %>
+            
+        </div>
+    </main>
+</div>
+<%- include('./partials/footer.ejs')%>

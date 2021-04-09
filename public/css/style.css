@@ -1,78 +1,163 @@
-/* Global */
 * {
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
 }
+
 a {
-    color:inherit;
-    text-decoration: inherit;
-}
-body {
-    min-height:100vh;
-    background-color: #ffffff;
-    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
-    background-attachment: fixed;
-    font-family: 'Poppins', sans-serif;
+  color: inherit;
+  text-decoration: inherit;
 }
 
-/* Header */
-header {
-    padding:24px;
-    text-align:center;
-}
-header img {
-    height:100px;
+.loginWrap {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
 }
 
-/* Main */
+.loginWrap .loginCont {
+  background-color: #f1f1f1;
+  padding: 64px;
+  border: 1px solid black;
+}
+
+.loginWrap .loginBtn {
+  padding: 6px;
+  background: white;
+  border: 1px solid black;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.loginWrap .loginBtn:hover {
+  background: #e0e0e0;
+}
+
+.flexCont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+aside {
+  border-right: 1px solid black;
+  padding: 24px;
+}
+
+aside li {
+  list-style: none;
+  margin-bottom: 6px;
+}
+
 main {
-    display:flex;
-    padding:24px 0;
+  margin: 0 auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
-    /*Aside*/
-    aside {
-        min-height: 100vh;
-        background-color:rgba(0, 0, 0, 0.164);
-        padding-top:20px;
-    }
-    nav {
-        display:flex;
-        flex-direction: column;
-        position:sticky;
-        top:0;
-        font-size:1.3rem;
-    }
-    nav a {
-        margin:20px;
-    }
 
-    .hero {
-        padding:0 40px;
-        margin:0 auto;
-        max-width:1200px;
-    }
+.wall {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 32px;
+}
 
-    .hero article {
-        margin-bottom:48px;
-        padding:24px;
-        background:rgba(0, 0, 0, 0.116);
-    }
-    .hero img {
-        width:100%;
-        padding:24px;
-    }
+.wall #newPostBtn {
+  cursor: pointer;
+  padding: 12px 0;
+  text-align: center;
+}
 
-    /* All articles */
-    .hero__allArticles {
-        display:flex;
-        flex-wrap:wrap;
-        justify-content: space-around;
-    }
-    .allArticles__article {
-        text-align: center;
-        width:300px;
-        padding:12px;
-        background:rgba(0, 0, 0, 0.116);
-        margin:12px;
-    }
+.wall .createCont__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wall .createCont__form .form__inputCont {
+  background: #e0e0e0;
+  padding: 32px;
+}
+
+.wall .createCont__form .form__inputCont input {
+  background: inherit;
+  margin: 6px 0;
+  padding: 6px;
+  outline: none;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.wall .createCont__form .form__inputCont textarea {
+  background: inherit;
+  margin: 6px 0;
+  padding: 6px;
+  width: 100%;
+  resize: none;
+  outline: none;
+  border: none;
+}
+
+.wall .createCont__form .form__inputCont #form__body {
+  min-height: 100px;
+}
+
+.wall .createCont__form button {
+  padding: 6px;
+  font-size: 1.5rem;
+  margin: 12px auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.wall .wall__post {
+  background: #e0e0e0;
+  padding: 32px;
+  margin: 16px 0;
+}
+
+header {
+  border-bottom: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 24px 48px;
+}
+
+footer {
+  padding: 64px;
+  background: #e0e0e0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,30 @@
+<%- include('./partials/head.ejs')%>
+
+<form method="post">
+    <div>
+        <label for="username">Brugernavn:</label>
+        <input type="text" name="username" id="username">
+    </div>
+    <div>
+        <label for="password">Fulde Navn:</label>
+        <input type="password" name="text" id="fullName">
+    </div>
+    <div>
+        <label for="password">Værelse Nummer:</label>
+        <input type="number" max="50" min="0" id="roomNumber">
+    </div>
+    <div>
+        <label for="password">Kodeord:</label>
+        <input type="password" name="password" id="psw">
+    </div>
+    <div>
+        <label for="password">Gentag kodeord:</label>
+        <input type="password" name="password" id="repPsw">
+    </div>
+    <div>
+        <button type="submit">Opret bruger</button>
+    </div>
+</form>
+<a href="Login">
+    <small>Login her</small>
+</a>

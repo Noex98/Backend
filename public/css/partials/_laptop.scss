@@ -1,0 +1,109 @@
+.loginWrap {
+    min-height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    .loginCont {
+        background-color: rgb(241, 241, 241);
+        padding:64px;
+        border:1px solid black;
+    }
+    .loginBtn {
+        padding:6px;
+        background: white;
+        border:1px solid black;
+        transition:200ms;
+        &:hover {
+            background: rgb(224, 224, 224);
+        }
+    }
+}
+
+.flexCont {
+    display:flex;
+}
+
+aside {
+    border-right: 1px solid black;
+    padding:24px;
+    li {
+        list-style: none;
+        margin-bottom: 6px;
+    }
+}
+
+main {
+    margin:0 auto;
+    flex:1;
+}
+
+.wall {
+    display:flex;
+    flex-direction: column;
+    max-width: 700px;
+
+    margin:0 auto;
+    padding:32px;
+    #newPostBtn {
+        cursor: pointer;
+        padding:12px 0;
+        text-align: center;
+    }
+    .createCont__form {
+        display:flex;
+        flex-direction: column;
+        .form__inputCont {
+            background: rgb(224, 224, 224);
+            padding:32px;
+            input {
+                background: inherit;
+                margin:6px 0;
+                padding:6px;
+                outline:none;
+                border:none;
+                font-size: 1.5rem;
+            }
+            textarea {
+                background: inherit;
+                margin:6px 0;
+                padding:6px;
+                width:100%;
+                resize:none;
+                outline:none;
+                border:none;
+            }
+            #form__body {
+                min-height: 100px;
+            }
+        }
+        button {
+            padding:6px;
+            font-size:1.5rem;
+            margin:12px auto;
+            width:fit-content;
+
+        }
+    }
+    .wall__post {
+        background: rgb(224, 224, 224);
+        padding:32px;
+        margin:16px 0;
+    }
+}
+
+header {
+    border-bottom:1px solid black;
+    display:flex;
+    justify-content: space-between;
+    padding:24px 48px;
+}
+
+footer {
+    padding:64px;
+    background:rgb(224, 224, 224);
+    display:flex;
+    justify-content: space-around;
+    flex-wrap:wrap;
+}
+
