@@ -24,6 +24,11 @@
                         <h2 class="post__title"><%= blog.title %></h3>
                         <br>
                         <p class="post__snippet"><%= blog.body %></p>
+                        <br><br>
+                        <small> 
+                            D. <%= blog.updatedAt.getDate() %>.<%= blog.updatedAt.getMonth() + 1%> <br>
+                            Kl: <%= blog.updatedAt.getHours()%>:<%= blog.updatedAt.getMinutes()%>
+                        </small>
                     </div>
                 <% }) %>
             <% } else { %>
