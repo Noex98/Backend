@@ -26,6 +26,7 @@
 
 aside {
     border-right: 1px solid black;
+    white-space: nowrap;
     nav {
         padding:24px;
         position:sticky;
@@ -47,9 +48,9 @@ main {
     display:flex;
     flex-direction: column;
     max-width: 700px;
-
     margin:0 auto;
     padding:32px;
+
     #newPostBtn {
         cursor: pointer;
         padding:12px 0;
@@ -58,10 +59,18 @@ main {
     .createCont__form {
         display:flex;
         flex-direction: column;
+        #charLeft {
+            font-size:0.7rem;
+            opacity: 0; 
+            transition: 250ms;
+            cursor:default;
+        }
         .form__inputCont {
             background: rgb(224, 224, 224);
             padding:32px;
+            
             input {
+                width:100%;
                 background: inherit;
                 margin-bottom:12px;
                 outline:none;
@@ -84,14 +93,13 @@ main {
             font-size:1.5rem;
             margin:12px auto;
             width:fit-content;
-
+            cursor:pointer;
         }
     }
     .wall__post {
         background: rgb(224, 224, 224);
         padding:32px;
         margin:16px 0;
-        width:100%;
         overflow-wrap: break-word;
     }
 }

@@ -1,3 +1,7 @@
+<!-- Unique script -->
+<script defer src="./js/newBlog.js"></script>
+
+<!-- Body -->
 <%- include('./partials/head.ejs')%>
 
 <%- include('./partials/header.ejs')%>
@@ -10,10 +14,10 @@
             <div id="postForm" style="display:none" class="wall__createCont">
                 <form class="createCont__form" method="POST">
                     <div class="form__inputCont">
-                        <input autocomplete="off" placeholder="Titel *" type="text" id="title" name="title" required>
-
-                        <textarea autocomplete="off" placeholder="Hej venner, *" id="form__body" name="body" required></textarea>
+                        <input autocomplete="off" maxlength="30" placeholder="Titel *" type="text" id="title" name="title" required>
+                        <textarea autocomplete="off" maxlength="0" placeholder="Hej venner, *" id="form__body" name="body" required></textarea>
                     </div>
+                    <div id="charLeft">Characters Left: </div>
                     <button>Submit</button>
                 </form>
             </div>
@@ -26,8 +30,8 @@
                         <p class="post__body"><%= blog.body %></p>
                         <br><br>
                         <small> 
-                            D. <%= blog.updatedAt.getDate() %>.<%= blog.updatedAt.getMonth() + 1%> <br>
-                            Kl: <%= blog.updatedAt.getHours()%>:<%= blog.updatedAt.getMinutes()%>
+                            D. <%= blog.updatedAt.getDate() %>.<%= blog.updatedAt.getMonth() + 1 %> <br>
+                            Kl: <%= blog.updatedAt.getHours() %>:<%= blog.updatedAt.getMinutes() %>
                         </small>
                     </div>
                 <% }) %>
