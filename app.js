@@ -19,7 +19,6 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => app.listen(PORT, () => console.info('App kører på port: ' + PORT )))
     .catch((err) => console.log(err));
 
-
 // Set view engine
 app.set('view engine', 'ejs');
 
