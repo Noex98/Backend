@@ -29,8 +29,15 @@ app.use(cookieParser()); // Parse cookies
 app.use(express.urlencoded({ extended: true })); // HTML form
 app.use(express.json({ extended: true })); // HTML form
 
+// Caching options
+var options = {
+    etag: true,
+    maxAge: 3600000, // In ms / 1 hour
+    redirect: true,
+}
+
 // Static
-app.use(express.static('./public'));
+app.use(express.static('./public', options));
 
 
 
