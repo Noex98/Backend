@@ -18,7 +18,7 @@ a {
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .btn {
@@ -41,7 +41,7 @@ a {
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 12px;
   -webkit-transition: 200ms;
   transition: 200ms;
@@ -52,7 +52,23 @@ a {
   background: white;
 }
 
-.loginWrap {
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 24px 48px;
+  background: rgba(255, 255, 255, 0.575);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.authWrap {
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -66,7 +82,7 @@ a {
   text-align: center;
 }
 
-.loginWrap .loginCont {
+.authWrap .authCont {
   padding: 64px;
   background: rgba(255, 255, 255, 0.575);
   -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -74,70 +90,103 @@ a {
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.loginWrap .loginCont input {
+.authWrap .authCont input {
+  display: block;
   background: none;
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.5);
   padding: 6px;
   outline: none;
+  margin: 0 auto;
 }
 
-.loginWrap .loginCont label {
+.authWrap .authCont label {
   display: block;
   padding: 6px;
 }
 
 .flexCont {
+  padding: 36px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 aside {
-  border-right: 1px solid rgba(0, 0, 0, 0.5);
   white-space: nowrap;
 }
 
 aside nav {
-  padding: 24px;
+  font-size: 1.3rem;
+  padding: 0 36px;
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  margin: 0 36px;
+  top: 24px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 aside nav li {
+  background: rgba(255, 255, 255, 0.575);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   list-style: none;
+  margin-bottom: 12px;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+aside nav li:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+aside nav li a {
+  padding: 12px;
+  display: block;
+}
+
+.rightAside .rightAside__cont {
+  font-size: 1.3rem;
+  padding: 0 36px;
+  position: -webkit-sticky;
+  position: sticky;
+  margin: 0 36px;
+  top: 24px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.rightAside .rightAside__cont .cont__item {
+  background: rgba(255, 255, 255, 0.575);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  margin-bottom: 12px;
+  padding: 12px;
+  text-align: center;
+}
+
+.rightAside .rightAside__cont .cont__item .rightAside__iconCont img {
+  height: 48px;
   margin-bottom: 6px;
 }
 
-#bgCont {
-  position: fixed;
-  top: 0;
-  left: 0;
-  min-height: 100vh;
-  min-width: 100vw;
-  z-index: -1;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("../media/images/bg.jpg");
-}
-
-#bgCont #bgOverlay {
-  width: 100vw;
-  height: 100vh;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(205, 221, 252, 0.5)), color-stop(50%, transparent), to(rgba(205, 221, 252, 0.5)));
-  background: linear-gradient(90deg, rgba(205, 221, 252, 0.5) 0%, transparent 50%, rgba(205, 221, 252, 0.5) 100%);
-}
-
-main {
-  margin: 0 auto;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+.rightAside .rightAside__cont .cont__item:hover {
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .wall {
@@ -150,7 +199,6 @@ main {
           flex-direction: column;
   max-width: 700px;
   margin: 0 auto;
-  padding: 32px;
 }
 
 .wall #newPostBtn {
@@ -164,13 +212,13 @@ main {
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   -webkit-transition: 200ms;
   transition: 200ms;
 }
 
 .wall #newPostBtn:hover {
-  background: rgba(255, 255, 255, 0.726);
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .wall .createCont__form {
@@ -198,7 +246,7 @@ main {
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 32px;
 }
 
@@ -244,26 +292,24 @@ main {
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-header {
-  border-bottom: 1px solid black;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 24px 48px;
+#bgCont {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  z-index: -1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../media/images/bg.jpg");
+  background-color: rgba(255, 0, 0, 0.125);
+  background-blend-mode: luminosity;
 }
 
-footer {
-  padding: 64px;
-  background: #e0e0e0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+#bgCont #bgOverlay {
+  height: 100vh;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.5)), color-stop(20%, transparent), color-stop(80%, transparent), to(rgba(255, 255, 255, 0.5)));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.5), transparent 20%, transparent 80%, rgba(255, 255, 255, 0.5));
 }
 /*# sourceMappingURL=style.css.map */

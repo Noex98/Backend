@@ -3,7 +3,7 @@
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border: 1px solid rgba( 255, 255, 255, 0.2 );
 }
 .glass {
     @include glass;
@@ -29,23 +29,34 @@
     }
 }
 
-.loginWrap {
+header {
+    display:flex;
+    justify-content: space-between;
+    padding:24px 48px;
+    background: rgba(255, 255, 255, 0.575);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    border-bottom: 1px solid rgba( 255, 255, 255, 0.2 );
+}
+
+.authWrap {
     min-height: 100vh;
     display:flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     
-    .loginCont {
+    .authCont {
         padding:64px;
         @include glass;
         input {
+            display:block;
             background:none;
             border-radius: 6px;
             border:1px solid rgba(0, 0, 0, 0.5);
             padding:6px;
             outline:none;
-
+            margin:0 auto;
         }
         label {
             display:block;
@@ -55,52 +66,74 @@
 }
 
 .flexCont {
+    padding:36px;
     display:flex;
+    justify-content: center;
 }
 
 aside {
-    border-right: 1px solid rgba(0, 0, 0, 0.5);
     white-space: nowrap;
     nav {
-        padding:24px;
+        font-size:1.3rem;
+        padding:0 36px;
         position:sticky;
-        top:0;
+        margin:0 36px;
+        top:24px;
+        border-right: 1px solid rgba( 255, 255, 255, 0.2 );
+        //@include glass;
         li {
+            @include glass;
             list-style: none;
-            margin-bottom: 6px;
+            margin-bottom: 12px;
+            transition:200ms;
+            &:hover {
+                background: rgba(255, 255, 255, 0.8);
+            }
+            a {
+                padding:12px;
+                display:block;
+            }
+        }
+    }
+}
+.rightAside {
+    .rightAside__cont {
+        font-size:1.3rem;
+        padding:0 36px;
+        position:sticky;
+        margin:0 36px;
+        top:24px;
+        border-left: 1px solid rgba( 255, 255, 255, 0.2 );
+        .cont__item {
+            @include glass;
+            transition:200ms;
+            margin-bottom: 12px;
+            padding:12px;
+            text-align: center;
+            .rightAside__iconCont {
+                img {
+                    height:48px;
+                    margin-bottom: 6px;
+                }
+            }
+            
+            &:hover {
+                background: rgba(255, 255, 255, 0.8);
+            }
         }
     }
 }
 
-#bgCont {
-    position: fixed;
-    top:0;
-    left:0;
-    min-height:100vh;
-    min-width: 100vw;
-    z-index: -1;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image:url('../media/images/bg.jpg') ;
-    #bgOverlay {
-        width:100vw;
-        height:100vh;
-        background: linear-gradient(90deg, rgba(205, 221, 252, 0.5) 0%, transparent 50%, rgba(205, 221, 252, 0.5) 100%);
-    }
-}
-
-main {
-    margin:0 auto;
-    flex:1;
-}
+// main {
+//     color:red;
+//     //flex:1;
+// }
 
 .wall {
     display:flex;
     flex-direction: column;
     max-width: 700px;
     margin:0 auto;
-    padding:32px;
 
     #newPostBtn {
         cursor: pointer;
@@ -110,7 +143,7 @@ main {
         @include glass;
         transition:200ms;
         &:hover {
-            background: rgba(255, 255, 255, 0.726);
+            background: rgba(255, 255, 255, 0.8);
         }
     }
     .createCont__form {
@@ -164,18 +197,25 @@ main {
     }
 }
 
-header {
-    border-bottom:1px solid black;
-    display:flex;
-    justify-content: space-between;
-    padding:24px 48px;
-}
+#bgCont {
+    position: fixed;
+    top:0;
+    left:0;
+    min-height:100vh;
+    min-width: 100vw;
+    z-index: -1;
 
-footer {
-    padding:64px;
-    background:rgb(224, 224, 224);
-    display:flex;
-    justify-content: space-around;
-    flex-wrap:wrap;
-}
+    
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image:url('../media/images/bg.jpg') ;
 
+    background-color: rgba(255, 0, 0, 0.125);
+    background-blend-mode:luminosity;
+    #bgOverlay {
+        height:100vh;
+        background:linear-gradient(to right, rgba(255, 255, 255, 0.5), transparent 20%,transparent 80%, rgba(255, 255, 255, 0.5))
+    }
+}

@@ -1,30 +1,37 @@
 <%- include('./partials/head.ejs')%>
 
-<form method="post">
-    <div>
-        <label for="username">e-mail:</label>
-        <input type="email" name="email" id="email">
+<%- include('./partials/bg.ejs')%>
+
+<div class="authWrap">
+    <div class="authCont">
+        <form method="post">
+            <div>
+                <label for="username">e-mail:</label>
+                <input type="email" name="email" id="email">
+            </div><br>
+            <div>
+                <label for="password">Name:</label>
+                <input type="text" name="name" id="name">
+            </div><br>
+            <div>
+                <label for="password">Room numberr:</label>
+                <input type="number" max="50" min="0" name="roomNumber" id="roomNumber">
+            </div><br>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="psw">
+            </div><br>
+            <div>
+                <label for="password">Repeat password:</label>
+                <input type="password" name="Reppassword" id="repPsw">
+            </div><br>
+            <div>
+                <button class="btn" type="submit">Create user</button>
+            </div>
+        </form>
+        <br>
+        <a href="Login">
+            <small>Already have an account?<br>Login here</small>
+        </a>
     </div>
-    <div>
-        <label for="password">Navn:</label>
-        <input type="text" name="name" id="name">
-    </div>
-    <div>
-        <label for="password">Værelse Nummer:</label>
-        <input type="number" max="50" min="0" name="roomNumber" id="roomNumber">
-    </div>
-    <div>
-        <label for="password">Kodeord:</label>
-        <input type="password" name="password" id="psw">
-    </div>
-    <div>
-        <label for="password">Gentag kodeord:</label>
-        <input type="password" name="Reppassword" id="repPsw">
-    </div>
-    <div>
-        <button type="submit">Opret bruger</button>
-    </div>
-</form>
-<a href="Login">
-    <small>Login her</small>
-</a>
+</div>

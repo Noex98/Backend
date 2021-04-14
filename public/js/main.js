@@ -1,4 +1,4 @@
-function crypt(input) {
+function crypt(input, encrypted) {
 
     //Text to binary
     let binOutput = ""
@@ -11,7 +11,7 @@ function crypt(input) {
     for (let i = 0; i < cryptOutput.length; i++){
         cryptOutput[i] = cryptOutput[i] ^ 1
     }
-    
+
     cryptOutput.pop(); //Remove the extra array item
     
     //Binary to text

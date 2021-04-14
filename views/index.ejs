@@ -6,43 +6,66 @@
 
 <%- include('./partials/bg.ejs')%>
 
-
 <%- include('./partials/header.ejs')%>
     <div class="flexCont">
     <%- include('./partials/aside.ejs')%>
-    <main>
-        <div class="wall">
-            <h2 id="newPostBtn">New post</h2>
+        <main>
+            <div class="wall">
+                <h2 id="newPostBtn">New post</h2>
 
-            <div id="postForm" style="display:none" class="wall__createCont">
-                <form class="createCont__form" method="POST">
-                    <div class="form__inputCont">
-                        <input autocomplete="off" maxlength="30" placeholder="Titel *" type="text" id="title" name="title" required>
-                        <textarea autocomplete="off" maxlength="0" placeholder="Hej venner, *" id="form__body" name="body" required></textarea>
-                    </div>
-                    <div id="charLeft">Characters Left: </div>
-                    <button class ="btnGlass">Submit</button>
-                </form>
+                <div id="postForm" style="display:none" class="wall__createCont">
+                    <form class="createCont__form" method="POST">
+                        <div class="form__inputCont">
+                            <input autocomplete="off" maxlength="30" placeholder="Titel *" type="text" id="title" name="title" required>
+                            <textarea autocomplete="off" maxlength="0" placeholder="Hej venner, *" id="form__body" name="body" required></textarea>
+                        </div>
+                        <div id="charLeft">Characters Left: </div>
+                        <button class ="btnGlass">Submit</button>
+                    </form>
+                </div>
+                
+                <% if (blogs.length > 0) { %>
+                    <% blogs.forEach(blog => { %>
+                        <div class="wall__post">
+                            <h2 class="post__title"><%= blog.title %></h3>
+                            <br>
+                            <p class="post__body"><%= blog.body %></p>
+                            <br><br>
+                            <small> 
+                                D. <%= blog.updatedAt.getDate() %>.<%= blog.updatedAt.getMonth() + 1 %> <br>
+                                Kl: <%= blog.updatedAt.getHours() + 2 %>:<%= blog.updatedAt.getMinutes() %> <!-- +2 hours becouse of the servers timezone -->
+                            </small>
+                        </div>
+                    <% }) %>
+                <% } else { %>
+                    <p>There are no blogs to display...</p>
+                <% } %>
+                
             </div>
-            
-            <% if (blogs.length > 0) { %>
-                <% blogs.forEach(blog => { %>
-                    <div class="wall__post">
-                        <h2 class="post__title"><%= blog.title %></h3>
-                        <br>
-                        <p class="post__body"><%= blog.body %></p>
-                        <br><br>
-                        <small> 
-                            D. <%= blog.updatedAt.getDate() %>.<%= blog.updatedAt.getMonth() + 1 %> <br>
-                            Kl: <%= blog.updatedAt.getHours() + 2 %>:<%= blog.updatedAt.getMinutes() %> <!-- +2 hours becouse of the servers timezone -->
-                        </small>
+        </main>
+        
+        <div class="rightAside">
+            <div class="rightAside__cont">
+                <div class="cont__item">
+                    <div class="rightAside__iconCont">
+                        <img src="./media/images/all.svg" alt="">
                     </div>
-                <% }) %>
-            <% } else { %>
-                <p>There are no blogs to display...</p>
-            <% } %>
-            
+                    <div>All</div>
+                </div>
+                <div class="cont__item">
+                    <div class="rightAside__iconCont">
+                        <img src="./media/images/corridor.svg" alt="">
+                    </div>
+                    <div>Your corridor</div>
+                </div>
+                <div class="cont__item">
+                    <div class="rightAside__iconCont">
+                        <img src="./media/images/board.svg" alt="">
+                    </div>
+                    <div>From the board</div>
+                </div>
+
+            </div>
         </div>
-    </main>
+    </div>
 </div>
-<%- include('./partials/footer.ejs')%>
