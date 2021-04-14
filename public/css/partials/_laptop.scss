@@ -12,10 +12,10 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    
     .loginCont {
-        background-color: rgb(241, 241, 241);
         padding:64px;
-        border:1px solid black;
+        @include glass;
     }
     .loginBtn {
         padding:6px;
