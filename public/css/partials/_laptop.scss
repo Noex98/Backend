@@ -1,3 +1,11 @@
+@mixin glass {
+    background: rgba(255, 255, 255, 0.575);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
 .loginWrap {
     min-height: 100vh;
     display:flex;
@@ -25,7 +33,7 @@
 }
 
 aside {
-    border-right: 1px solid black;
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
     white-space: nowrap;
     nav {
         padding:24px;
@@ -36,7 +44,24 @@ aside {
             margin-bottom: 6px;
         }
     }
-    
+}
+
+#bgCont {
+    position: fixed;
+    top:0;
+    left:0;
+    min-height:100vh;
+    min-width: 100vw;
+    z-index: -1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image:url('../media/images/bg.jpg') ;
+    #bgOverlay {
+        width:100vw;
+        height:100vh;
+        background: linear-gradient(90deg, rgba(205, 221, 252, 0.5) 0%, transparent 50%, rgba(205, 221, 252, 0.5) 100%);
+    }
 }
 
 main {
@@ -53,8 +78,10 @@ main {
 
     #newPostBtn {
         cursor: pointer;
-        padding:12px 0;
-        text-align: center;
+        margin-bottom:32px;
+        padding:24px;
+        color:rgba(0, 0, 0, 0.5);
+        @include glass;
     }
     .createCont__form {
         display:flex;
@@ -66,19 +93,19 @@ main {
             cursor:default;
         }
         .form__inputCont {
-            background: rgb(224, 224, 224);
+            @include glass;
             padding:32px;
             
             input {
                 width:100%;
-                background: inherit;
+                background: none;
                 margin-bottom:12px;
                 outline:none;
                 border:none;
                 font-size: 1.5rem;
             }
             textarea {
-                background: inherit;
+                background: none;
                 width:100%;
                 resize:none;
                 outline:none;
@@ -97,10 +124,15 @@ main {
         }
     }
     .wall__post {
-        background: rgb(224, 224, 224);
         padding:32px;
         margin:16px 0;
         overflow-wrap: break-word;
+
+        background: rgba(255, 255, 255, 0.575);
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 4px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
     }
 }
 
