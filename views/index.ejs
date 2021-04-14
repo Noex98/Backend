@@ -21,7 +21,7 @@
                     <button>Submit</button>
                 </form>
             </div>
-
+            
             <% if (blogs.length > 0) { %>
                 <% blogs.forEach(blog => { %>
                     <div class="wall__post">
@@ -31,7 +31,7 @@
                         <br><br>
                         <small> 
                             D. <%= blog.updatedAt.getDate() %>.<%= blog.updatedAt.getMonth() + 1 %> <br>
-                            Kl: <%= blog.updatedAt.getHours() %>:<%= blog.updatedAt.getMinutes() %>
+                            Kl: <%= blog.updatedAt.getHours() + 2 %>:<%= blog.updatedAt.getMinutes() %> <!-- +2 hours becouse of the servers timezone -->
                         </small>
                     </div>
                 <% }) %>

@@ -1,6 +1,7 @@
 // Authentication
 const express = require('express');
 const authRoutes = express.Router();
+const User = require('../models/user');
 
 // Load login view
 authRoutes.get('/Login', (req, res) => {
@@ -26,13 +27,16 @@ authRoutes.get('/create-user', (req, res) => {
     }
 });
 
-//If you are not logged in and send GET
+//If you are not logged in and send GET req
 authRoutes.get('/*', (req, res, next) => {
-    if (req.cookies.isLoggedIn === 'true'){
-    next()
-    } else {
-        res.redirect('Login')
-    }
+    User.findOne({ _id: req.cookies.user_Id })
+        .then ((result) => {
+            if (result){
+                next();
+            } else {
+                res.redirect('/Login')
+            }
+    })
 })
 
 //Login btn
@@ -43,15 +47,35 @@ authRoutes.post('/Login', (req, res, next) => {
 
     //User is not logged in
     } else {
-        if (req.body.username== 'admin' || req.body.password == '12345') {
-            res.cookie('isLoggedIn', 'true');
-            res.redirect('/');
-        } else {
-            res.json({ msg: 'login fejl' })
-        }
+        User.findOne({ email: req.body.email, password: req.body.password }).exec()
+            .then((result) => {
+                if (result){
+                    console.log(result._id);
+                    res.cookie('user_Id', result._id);
+                    res.redirect('/')
+                } else {
+                    res.redirect('/Login')
+                }
+            })
+            .catch((err) => {
+                res.redirect('/Login')
+            })
+
     }
 })
 
+//Create new user
+authRoutes.post('/create-user', (req, res) => {
+    const user = new User(req.body);
+    
+    user.save()
+        .then((result) => {
+            res.redirect('/Login')
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+})
 
 
 module.exports = authRoutes;

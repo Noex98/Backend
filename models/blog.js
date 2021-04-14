@@ -10,6 +10,10 @@ const blogSchema = new Schema({
         type: String,
         required: true,
     },
+    auther: {
+        type: String,
+        required: false,
+    },
 }, { timestamps: true });
 
 const Blog = mongoose.model('Blog', blogSchema);

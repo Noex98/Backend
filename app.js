@@ -38,9 +38,6 @@ var options = {
 // Static
 app.use(express.static('./public', options));
 
-
-
-
 // Routing
 app.use(authRoutes);
 app.use(priRoutes);
@@ -51,4 +48,7 @@ app.use((req, res) => {
 });
 
 
-// Listen for requests
+// Crypt
+
+
+
