@@ -5,6 +5,29 @@
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
+.glass {
+    @include glass;
+}
+
+.btn {
+    padding:6px;
+    background: none;
+    border:1px solid rgba(0, 0, 0, 0.5);
+    transition:200ms;
+    outline:none;
+    &:hover {
+        background: white;
+    }
+}
+.btnGlass {
+    @include glass;
+    padding:12px;
+    transition:200ms;
+    outline:none;
+    &:hover {
+        background: white;
+    }
+}
 
 .loginWrap {
     min-height: 100vh;
@@ -16,14 +39,17 @@
     .loginCont {
         padding:64px;
         @include glass;
-    }
-    .loginBtn {
-        padding:6px;
-        background: white;
-        border:1px solid black;
-        transition:200ms;
-        &:hover {
-            background: rgb(224, 224, 224);
+        input {
+            background:none;
+            border-radius: 6px;
+            border:1px solid rgba(0, 0, 0, 0.5);
+            padding:6px;
+            outline:none;
+
+        }
+        label {
+            display:block;
+            padding:6px;
         }
     }
 }
@@ -82,6 +108,10 @@ main {
         padding:24px;
         color:rgba(0, 0, 0, 0.5);
         @include glass;
+        transition:200ms;
+        &:hover {
+            background: rgba(255, 255, 255, 0.726);
+        }
     }
     .createCont__form {
         display:flex;
@@ -116,11 +146,9 @@ main {
             }
         }
         button {
-            padding:6px;
             font-size:1.5rem;
-            margin:12px auto;
             width:fit-content;
-            cursor:pointer;
+            margin:0 auto;
         }
     }
     .wall__post {
