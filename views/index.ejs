@@ -23,30 +23,73 @@
                         <button class ="btnGlass">Submit</button>
                     </form>
                 </div>
-                
-                <% if (blogs.length > 0) { %>
-                    <% blogs.forEach(blog => { %>
-                        <div class="wall__post">
-                            <h2 class="post__title"><%= blog.title %></h3>
-                            <br>
-                            <p class="post__body"><%= blog.body %></p>
-                            <br><br>
-                            <small> 
-                                D. <%= blog.updatedAt.getDate() %>.<%= blog.updatedAt.getMonth() + 1 %> <br>
-                                Kl: <%= blog.updatedAt.getHours() + 2 %>:<%= blog.updatedAt.getMinutes() %> <!-- +2 hours becouse of the servers timezone -->
-                            </small>
-                        </div>
-                    <% }) %>
-                <% } else { %>
-                    <p>There are no blogs to display...</p>
-                <% } %>
+
+                <div class="filtered__wrap">
+                    <div class="wall__filtered">
+                        <% if (blogs.length > 0) { %>
+                            <% blogs.forEach(blog => { %>
+                                <div class="wall__post">
+                                    <h2 class="post__title"><%= blog.title %></h3>
+                                    <br>
+                                    <p class="post__body"><%= blog.body %></p>
+                                    <br><br>
+                                    <small> 
+                                        D. <%= blog.updatedAt.getDate() %>.<%= blog.updatedAt.getMonth() + 1 %> <br>
+                                        Kl: <%= blog.updatedAt.getHours() + 2 %>:<%= blog.updatedAt.getMinutes() %> <!-- +2 hours becouse of the servers timezone -->
+                                    </small>
+                                </div>
+                            <% }) %>
+                        <% } else { %>
+                            <p>There are no blogs to display...</p>
+                        <% } %>
+                    </div> 
+
+                    <div class="wall__filtered">
+                        <% if (blogs.length > 0) { %>
+                            <% blogs.forEach(blog => { %>
+                                <div class="wall__post">
+                                    <h2 class="post__title"><%= blog.title %></h3>
+                                    <br>
+                                    <p class="post__body"><%= blog.body %></p>
+                                    <br><br>
+                                    <small> 
+                                        D. <%= blog.updatedAt.getDate() %>.<%= blog.updatedAt.getMonth() + 1 %> <br>
+                                        Kl: <%= blog.updatedAt.getHours() + 2 %>:<%= blog.updatedAt.getMinutes() %> <!-- +2 hours becouse of the servers timezone -->
+                                    </small>
+                                </div>
+                            <% }) %>
+                        <% } else { %>
+                            <p>There are no blogs to display...</p>
+                        <% } %>
+                    </div>
+
+                    <div class="wall__filtered">
+                        <% if (blogs.length > 0) { %>
+                            <% blogs.forEach(blog => { %>
+                                <div class="wall__post">
+                                    <h2 class="post__title"><%= blog.title %></h3>
+                                    <br>
+                                    <p class="post__body"><%= blog.body %></p>
+                                    <br><br>
+                                    <small> 
+                                        D. <%= blog.updatedAt.getDate() %>.<%= blog.updatedAt.getMonth() + 1 %> <br>
+                                        Kl: <%= blog.updatedAt.getHours() + 2 %>:<%= blog.updatedAt.getMinutes() %> <!-- +2 hours becouse of the servers timezone -->
+                                    </small>
+                                </div>
+                            <% }) %>
+                        <% } else { %>
+                            <p>There are no blogs to display...</p>
+                        <% } %>
+                    </div>
+                </div>
                 
             </div>
+
         </main>
         
         <div class="rightAside">
             <div class="rightAside__cont">
-                <div class="cont__item">
+                <div class="cont__item cont__item-active">
                     <div class="rightAside__iconCont">
                         <img src="./media/images/all.svg" alt="">
                     </div>

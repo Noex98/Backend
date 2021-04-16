@@ -1,4 +1,4 @@
-function crypt(input, encrypted) {
+function crypt(input) {
 
     //Text to binary
     let binOutput = ""

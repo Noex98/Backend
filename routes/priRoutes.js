@@ -22,6 +22,14 @@ priRoutes.get('/', (req, res) => {
 
 })
 
+//Rules
+priRoutes.get('/rules', (req, res) => {
+    User.findOne( {_id: req.cookies.user_Id} ) //Find user
+        .then((userResult) => {
+            res.render('rules', { title: 'Rules', user: userResult})
+        })
+})
+
 // Blog post
 priRoutes.post('/', (req, res) => {
     const blog = new Blog(req.body);
