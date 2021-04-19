@@ -5,9 +5,16 @@
     font-family: 'Open Sans', sans-serif;
     color:rgb(14, 14, 14);
 }
-body {
-    overflow-x: hidden;
+
+html {
+    scroll-behavior: smooth;
+
 }
+
+body {
+    height:100vh;
+}
+
 a {
     color:inherit;
     text-decoration: inherit;

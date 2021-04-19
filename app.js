@@ -23,7 +23,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 app.set('view engine', 'ejs');
 
 // Middleware
-//app.use(morgan(dev)); // dev tool
+//app.use(morgan('dev')); // dev tool
 app.use(cookieParser()); // Parse cookies
 app.use(express.urlencoded({ extended: true })); // HTML form
 app.use(express.json({ extended: true })); // HTML form
@@ -38,6 +38,12 @@ var options = {
 // Static
 app.use(express.static('./public', options));
 
+// Blog req
+
+app.get('/getBlog', (req, res) => {
+    res.write("random numbers that should come in the form of json");
+})
+
 // Routing
 app.use(authRoutes);
 app.use(priRoutes);
@@ -46,9 +52,5 @@ app.use(priRoutes);
 app.use((req, res) => {
     res.render('404', { title: '404'});
 });
-
-
-// Crypt
-
 
 

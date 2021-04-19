@@ -1,7 +1,9 @@
 @import 'partials/resets'; // Resets
 @import 'partials/variables'; // Variables
-@import 'partials/keyframes'; // Keyframes
 
 //Primary stylesheets
 @import 'partials/laptop'; // Laptop: no media query
 @import 'partials/mobile'; // Mobile: max width: 768
+
+//keyframes
+@import 'partials/keyframes'; // Keyframes

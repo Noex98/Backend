@@ -1,8 +1,12 @@
 <!-- Unique script -->
-<script defer src="./js/newBlog.js"></script>
+<script defer src="./js/indexPage.js"></script>
 <%- include('./partials/head.ejs')%>
 
 <!-- Body -->
+
+<div id="toTopBtn" class="invisible">
+    <img src="./media/images/upArrow.svg" alt="Upwards arrow">
+</div>
 
 <%- include('./partials/bg.ejs')%>
 
@@ -18,9 +22,14 @@
                         <div class="form__inputCont">
                             <input autocomplete="off" maxlength="30" placeholder="Titel *" type="text" id="title" name="title" required>
                             <textarea autocomplete="off" maxlength="0" placeholder="Hej venner, *" id="form__body" name="body" required></textarea>
+                            <div class="inputCont__btnWrap">
+                                <span id="cancelBtn">Cancel</span>
+                                <button>Submit</button>
+                             </div>
+
                         </div>
                         <div id="charLeft">Characters Left: </div>
-                        <button class ="btnGlass">Submit</button>
+                        
                     </form>
                 </div>
 

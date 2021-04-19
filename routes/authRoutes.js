@@ -77,5 +77,4 @@ authRoutes.post('/create-user', (req, res) => {
         });
 })
 
-
 module.exports = authRoutes;
