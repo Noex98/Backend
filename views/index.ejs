@@ -35,10 +35,11 @@
 
                 <div class="filtered__wrap">
                     <div class="wall__filtered">
+                        <h2>All posts</h2>
                         <% if (blogs.length > 0) { %>
                             <% blogs.forEach(blog => { %>
                                 <div class="wall__post">
-                                    <h2 class="post__title"><%= blog.title %></h3>
+                                    <h3 class="post__title"><%= blog.title %></h3>
                                     <br>
                                     <p class="post__body"><%= blog.body %></p>
                                     <br><br>
@@ -54,10 +55,11 @@
                     </div> 
 
                     <div class="wall__filtered">
+                        <h2>Your corridor</h2>
                         <% if (blogs.length > 0) { %>
                             <% blogs.forEach(blog => { %>
                                 <div class="wall__post">
-                                    <h2 class="post__title"><%= blog.title %></h3>
+                                    <h3 class="post__title"><%= blog.title %></h3>
                                     <br>
                                     <p class="post__body"><%= blog.body %></p>
                                     <br><br>
@@ -73,10 +75,11 @@
                     </div>
 
                     <div class="wall__filtered">
+                        <h2>From the board</h2>
                         <% if (blogs.length > 0) { %>
                             <% blogs.forEach(blog => { %>
                                 <div class="wall__post">
-                                    <h2 class="post__title"><%= blog.title %></h3>
+                                    <h3 class="post__title"><%= blog.title %></h3>
                                     <br>
                                     <p class="post__body"><%= blog.body %></p>
                                     <br><br>
