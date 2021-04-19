@@ -429,6 +429,20 @@ main {
           box-shadow: none;
 }
 
+#htmlOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
 #bgCont {
   position: fixed;
   top: 0;
@@ -451,10 +465,7 @@ main {
 }
 
 @media only screen and (max-width: 768px) {
-  header .header__username {
-    display: none;
-  }
-  header .burger {
+  .burger {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -464,8 +475,16 @@ main {
     display: block;
     cursor: pointer;
     margin: auto 0;
+    position: absolute;
+    right: 31.5;
+    top: 31.5;
+    -webkit-transform: translateY(-25%);
+            transform: translateY(-25%);
+    z-index: 10;
+    -webkit-transition: 300ms;
+    transition: 300ms;
   }
-  header .burger div {
+  .burger div {
     width: 25px;
     height: 3px;
     background-color: #5d4954;
@@ -473,16 +492,19 @@ main {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
-  header .burger-toggle .line1 {
+  .burger-toggle .line1 {
     -webkit-transform: rotate(-45deg) translate(-5px, 6px);
             transform: rotate(-45deg) translate(-5px, 6px);
   }
-  header .burger-toggle .line2 {
+  .burger-toggle .line2 {
     opacity: 0;
   }
-  header .burger-toggle .line3 {
+  .burger-toggle .line3 {
     -webkit-transform: rotate(45deg) translate(-5px, -6px);
             transform: rotate(45deg) translate(-5px, -6px);
+  }
+  header .header__username {
+    display: none;
   }
   .rightAside {
     display: none;
@@ -501,11 +523,11 @@ main {
   aside {
     max-width: 0;
     overflow: hidden;
-    z-index: 2;
+    z-index: 4;
     position: absolute;
     right: 0px;
-    height: calc(100vh - 73px);
-    top: 73px;
+    height: 100vh;
+    top: 0;
     background: rgba(255, 255, 255, 0.575);
     -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -544,7 +566,7 @@ main {
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
     height: 100%;
-    padding: 36px 0;
+    padding: 73px 0;
   }
   aside nav ul li {
     opacity: 0;
