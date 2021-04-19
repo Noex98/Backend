@@ -275,6 +275,7 @@ main {
     }
     .wall__filtered {
         scroll-snap-align: center;
+        scroll-snap-stop: always;
         scroll-behavior: smooth;
         &:nth-child(2n){
             margin:0 64px;

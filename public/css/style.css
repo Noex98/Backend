@@ -406,6 +406,7 @@ main {
 
 .wall .wall__filtered {
   scroll-snap-align: center;
+  scroll-snap-stop: always;
   scroll-behavior: smooth;
 }
 
