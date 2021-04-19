@@ -16,6 +16,7 @@ function burgerClick(){
 	} else {
 		document.body.style.overflow = "auto"
 		htmlOverlay.style.opacity = 0;
+		htmlOverlay.style.pointerEvents = "none"
 	}
 
 	//Scroll to top
