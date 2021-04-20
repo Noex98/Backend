@@ -273,6 +273,40 @@ main {
       -ms-flex-direction: column;
           flex-direction: column;
   max-width: 600px;
+  position: relative;
+}
+
+.wall .arrow {
+  position: fixed;
+  top: 50vh;
+  right: 36px;
+  width: 36px;
+  height: 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  border-radius: 50%;
+  background: white;
+  -webkit-animation: fadeInOut 2.5s ease-in-out;
+          animation: fadeInOut 2.5s ease-in-out;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 4;
+  text-align: center;
+}
+
+.wall .arrow img {
+  -webkit-transform: rotateZ(90deg);
+          transform: rotateZ(90deg);
+  width: 12px;
+  height: 12px;
 }
 
 .wall #newPostBtn {
@@ -597,6 +631,30 @@ main {
     opacity: 1;
     -webkit-transform: translateX(0px);
             transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */

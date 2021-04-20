@@ -5,24 +5,16 @@ const filterLinks = document.querySelectorAll('.cont__item');
 function addActiveClass(number){
     for (let i = 0; i < filterLinks.length; i++){
         filterLinks.item(i).classList.remove('cont__item-active');
-        filterLinks.item(number).classList.add('cont__item-active')
     }
+    filterLinks.item(number).classList.add('cont__item-active')
 }
 
 // Add event listeners to filter btns
 for (let i = 0; i < filterLinks.length; i++){
     filterLinks.item(i).addEventListener('click', () => {
         var contWidth = filterCont.offsetWidth;
-        if (i == 0) {
-            filterCont.scrollTo(0, 0);
-            addActiveClass(0)
-        } else if (i == 1){
-            filterCont.scrollTo(contWidth, 0);
-            addActiveClass(1)
-        } else if (i == 2){
-            filterCont.scrollTo(contWidth*2, 0);
-            addActiveClass(2)
-        }
+        filterCont.scrollTo(i * contWidth, 0);
+        addActiveClass(i)
     })
 }
 
