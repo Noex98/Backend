@@ -23,4 +23,4 @@ function crypt(input) {
     return output;
 }
 
-//module.export = crypt;
+module.export = crypt;

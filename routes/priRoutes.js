@@ -30,6 +30,14 @@ priRoutes.get('/rules', (req, res) => {
         })
 })
 
+//Covid
+priRoutes.get('/covid', (req, res) => {
+    User.findOne( {_id: req.cookies.user_Id} ) //Find user
+        .then((userResult) => {
+            res.render('covid', { title: 'Covid-19', user: userResult})
+        })
+})
+
 // Blog post
 priRoutes.post('/', (req, res) => {
     const blog = new Blog(req.body);

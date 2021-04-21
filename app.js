@@ -9,6 +9,8 @@ const priRoutes = require('./routes/priRoutes');
 const authRoutes = require('./routes/authRoutes');
 const Blog = require('./models/blog');
 
+
+
 //Express app
 const app = express();
 const PORT = process.env.PORT || 3000;

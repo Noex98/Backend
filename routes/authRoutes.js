@@ -39,7 +39,7 @@ authRoutes.get('/*', (req, res, next) => {
     })
 })
 
-//Login btn
+//Login post btn
 authRoutes.post('/Login', (req, res, next) => {
     //User is already logged in
     if (req.cookies.isLoggedIn === 'true'){

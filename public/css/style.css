@@ -21,7 +21,7 @@ a {
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.575);
+  background: rgba(255, 255, 255, 0.65);
   -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
           box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   -webkit-backdrop-filter: blur(5px);
@@ -44,7 +44,7 @@ a {
 }
 
 .btnGlass {
-  background: rgba(255, 255, 255, 0.575);
+  background: rgba(255, 255, 255, 0.65);
   -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
           box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   -webkit-backdrop-filter: blur(5px);
@@ -106,7 +106,7 @@ header img {
   z-index: 1;
   -webkit-transition: 200ms;
   transition: 200ms;
-  background: rgba(255, 255, 255, 0.575);
+  background: rgba(255, 255, 255, 0.65);
   -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
           box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   -webkit-backdrop-filter: blur(5px);
@@ -148,7 +148,7 @@ header img {
 
 .authWrap .authCont {
   padding: 64px;
-  background: rgba(255, 255, 255, 0.575);
+  background: rgba(255, 255, 255, 0.65);
   -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
           box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   -webkit-backdrop-filter: blur(5px);
@@ -197,7 +197,7 @@ aside nav {
 }
 
 aside nav li {
-  background: rgba(255, 255, 255, 0.575);
+  background: rgba(255, 255, 255, 0.65);
   -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
           box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   -webkit-backdrop-filter: blur(5px);
@@ -233,7 +233,7 @@ aside nav li a {
 .rightAside .rightAside__cont .cont__item {
   cursor: pointer;
   width: 125px;
-  background: rgba(255, 255, 255, 0.575);
+  background: rgba(255, 255, 255, 0.65);
   -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
           box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   -webkit-backdrop-filter: blur(5px);
@@ -264,6 +264,95 @@ main {
   width: 600px;
 }
 
+main .main__rules {
+  padding: 24px;
+}
+
+main .main__rules .main__accordionContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main .main__rules .accordion {
+  width: 90%;
+  margin: 16px auto;
+  padding: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+main .main__rules .accordion .accordion-item-header {
+  min-height: 3.5rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+main .main__rules .accordion .accordion-item-body {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out;
+}
+
+main .main__rules .accordion .accordion-item-body-content {
+  padding: 1rem;
+  line-height: 1.5rem;
+}
+
+main .main__rules .accordion .accordion-item-header::after {
+  content: "+";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+main .main__rules .accordion .accordion-item-header.active::after {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+#onboard {
+  display: none;
+  padding: 5vw;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+#onboard video {
+  max-width: 100%;
+  max-height: 80vh;
+}
+
+#onboard #onboardClose {
+  font-size: 1.4rem;
+  text-align: center;
+  padding-top: 12px;
+  cursor: pointer;
+}
+
 .wall {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -277,40 +366,11 @@ main {
 }
 
 .wall .arrow {
-  position: fixed;
-  top: 50vh;
-  right: 36px;
-  width: 36px;
-  height: 36px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  opacity: 0;
-  border-radius: 50%;
-  background: white;
-  -webkit-animation: fadeInOut 2.5s ease-in-out;
-          animation: fadeInOut 2.5s ease-in-out;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  z-index: 4;
-  text-align: center;
-}
-
-.wall .arrow img {
-  -webkit-transform: rotateZ(90deg);
-          transform: rotateZ(90deg);
-  width: 12px;
-  height: 12px;
+  display: none;
 }
 
 .wall #newPostBtn {
-  background: rgba(255, 255, 255, 0.575);
+  background: rgba(255, 255, 255, 0.65);
   -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
           box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   -webkit-backdrop-filter: blur(5px);
@@ -348,7 +408,7 @@ main {
 }
 
 .wall .createCont__form .form__inputCont {
-  background: rgba(255, 255, 255, 0.575);
+  background: rgba(255, 255, 255, 0.65);
   -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
           box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   -webkit-backdrop-filter: blur(5px);
@@ -453,7 +513,7 @@ main {
   padding: 32px;
   margin: 16px 0;
   overflow-wrap: break-word;
-  background: rgba(255, 255, 255, 0.575);
+  background: rgba(255, 255, 255, 0.65);
   -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
           box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   -webkit-backdrop-filter: blur(5px);
@@ -511,11 +571,11 @@ main {
     cursor: pointer;
     margin: auto 0;
     position: absolute;
-    right: 31.5;
-    top: 31.5;
+    right: 31.5px;
+    top: 31.5px;
     -webkit-transform: translateY(-25%);
             transform: translateY(-25%);
-    z-index: 10;
+    z-index: 9;
     -webkit-transition: 300ms;
     transition: 300ms;
   }
@@ -547,6 +607,38 @@ main {
   .wall {
     width: 85vw;
   }
+  .wall .arrow {
+    display: block;
+    position: fixed;
+    top: 50vh;
+    right: 36px;
+    width: 36px;
+    height: 36px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    opacity: 0;
+    border-radius: 50%;
+    background: white;
+    -webkit-animation: fadeInOut 2.5s ease-in-out;
+            animation: fadeInOut 2.5s ease-in-out;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    z-index: 4;
+    text-align: center;
+  }
+  .wall .arrow img {
+    -webkit-transform: rotateZ(90deg);
+            transform: rotateZ(90deg);
+    width: 12px;
+    height: 12px;
+  }
   .wall .wall__post {
     width: 85vw;
   }
@@ -563,7 +655,7 @@ main {
     right: 0px;
     height: 100vh;
     top: 0;
-    background: rgba(255, 255, 255, 0.575);
+    background: rgba(255, 255, 255, 0.65);
     -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     -webkit-backdrop-filter: blur(5px);

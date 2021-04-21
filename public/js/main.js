@@ -12,7 +12,6 @@ function burgerClick(){
 		document.body.style.overflow = "hidden"
 		htmlOverlay.style.opacity = 0.2;
 		htmlOverlay.style.pointerEvents = "auto"
-		
 	} else {
 		document.body.style.overflow = "auto"
 		htmlOverlay.style.opacity = 0;
@@ -40,3 +39,4 @@ htmlOverlay.addEventListener('click', () => { burgerClick() })
 
 // Burger menu clicked
 burger.addEventListener('click', () => { burgerClick() });
+

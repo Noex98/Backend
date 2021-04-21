@@ -71,3 +71,17 @@ formBody.addEventListener('input', () => {
     charLeft.style.opacity ="0.5";
     charLeft.innerHTML = 'Characters left: ' + (maxLenght - formBody.value.length);
 });
+
+// Onboarding
+const onboardCont = document.getElementById('onboard');
+
+// First time visit, and on mobile
+if (!localStorage.firstVisit && innerWidth < 768){
+    onboardCont.style.display = "block"
+}
+
+document.getElementById('onboardClose').addEventListener('click', () => {
+    onboardCont.style.display = "none"
+    //Avoid onboarding in the future
+    localStorage.firstVisit = '1'
+})
