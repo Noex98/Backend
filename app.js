@@ -10,7 +10,6 @@ const authRoutes = require('./routes/authRoutes');
 const Blog = require('./models/blog');
 
 
-
 //Express app
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -54,5 +53,3 @@ app.use(priRoutes);
 app.use((req, res) => {
     res.render('404', { title: '404'});
 });
-
-

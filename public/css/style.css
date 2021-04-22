@@ -529,7 +529,6 @@ main .main__rules .accordion .accordion-item-header.active::after {
   top: 0;
   left: 0;
   height: 100vh;
-  width: 100vw;
   z-index: 2;
   background: black;
   opacity: 0;
