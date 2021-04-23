@@ -361,6 +361,13 @@ main .main__rules .accordion .accordion-item-header.active::after {
   cursor: pointer;
 }
 
+#onboard #onboardText {
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 6px;
+  margin-bottom: 24px;
+}
+
 .wall {
   display: -webkit-box;
   display: -ms-flexbox;
