@@ -233,15 +233,17 @@ main {
     height:100vh;
     position:fixed;
     z-index: 10;
-    background:rgba( 255, 255, 255, 0.8 );
+    background:rgba(255, 255, 255, 0.95);
     video {
         max-width: 100%;
         max-height: 80vh;
     }
     #onboardClose {
+        @include glass;
         font-size:1.4rem;
         text-align: center;
-        padding-top:12px;
+        padding: 12px;
+        margin-top: 24px;
         cursor:pointer;
     }
 }
