@@ -6,8 +6,7 @@ const mongoose = require('mongoose');
 
 // Route Imports
 const priRoutes = require('./routes/priRoutes');
-const authRoutes = require('./routes/authRoutes');
-const Blog = require('./models/blog');
+//const authRoutes = require('./routes/authRoutes');
 
 
 //Express app
@@ -40,13 +39,12 @@ var options = {
 app.use(express.static('./public', options));
 
 // Blog req
-
 app.get('/getBlog', (req, res) => {
     res.write("random numbers that should come in the form of json");
 })
 
 // Routing
-app.use(authRoutes);
+/*app.use(authRoutes);*/
 app.use(priRoutes);
 
 //404
