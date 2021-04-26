@@ -18,11 +18,11 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Noex98/Backend.git"
+    "url": "git+https://github.com/Noex98/Multimedie-eksamen.git"
   },
   "bugs": {
-    "url": "https://github.com/Noex98/Backend/issues"
+    "url": "https://github.com/Noex98/Multimedie-eksamen/issues"
   },
-  "homepage": "https://github.com/Noex98/Backend#readme",
+  "homepage": "https://github.com/Noex98/Multimedie-eksamen#readme",
   "description": ""
 }
